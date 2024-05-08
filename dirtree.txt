@@ -1,0 +1,122 @@
+service -	Package logger provides support for initializing the log system.
+├── api -	Package authapi maintains the web based api for auth access.
+│   ├── cmd -	
+│   │   ├── frontends -	
+│   │   │   └── admin -	
+│   │   │       ├── public -	
+│   │   │       └── src -	
+│   │   │           ├── components -	
+│   │   │           │   ├── DataTable -	
+│   │   │           │   ├── UI -	
+│   │   │           │   └── Users -	
+│   │   │           ├── layouts -	
+│   │   │           │   └── default -	
+│   │   │           ├── plugins -	
+│   │   │           ├── router -	
+│   │   │           ├── store -	
+│   │   │           ├── styles -	
+│   │   │           └── views -	
+│   │   ├── services -	
+│   │   │   ├── auth -	Package auth ...
+│   │   │   │   └── build -	
+│   │   │   │       └── all -	Package all binds all the routes into the specified app.
+│   │   │   ├── metrics -	Package metrics ...
+│   │   │   │   ├── collector -	Package collector is a simple collector for 
+│   │   │   │   └── publisher -	Package publisher manages the publishing of metrics.
+│   │   │   │       ├── datadog -	Package datadog provides support for publishing metrics to DD.
+│   │   │   │       ├── expvar -	Package expvar manages the publishing of metrics to stdout.
+│   │   │   │       └── prometheus -	Package prometheus provides suppoert for sending metrics to prometheus.
+│   │   │   └── sales -	Package sales ...
+│   │   │       └── build -	
+│   │   │           ├── all -	Package all binds all the routes into the specified app.
+│   │   │           ├── crud -	Package crud binds the crud domain set of routes into the specified app.
+│   │   │           └── reporting -	Package reporting binds the reporting domain set of routes into the specified app.
+│   │   └── tooling -	
+│   │       ├── admin -	This program performs administrative tasks for the garage sale service.
+│   │       │   └── commands -	Package commands contains the functionality for the set of commands currently supported by the CLI tooling.
+│   │       └── logfmt -	This program takes the structured log output and makes it readable.
+│   └── http -	
+│       ├── api -	
+│       │   ├── apitest -	Package apitest provides support for excuting api test logic.
+│       │   ├── debug -	Package debug provides handler support for the debugging endpoints.
+│       │   ├── mid -	Package mid contains the set of values the middleware handlers for using the http protocol.
+│       │   └── mux -	Package mux provides support to bind domain level routes to the application mux.
+│       ├── domain -	
+│       │   ├── authapi -	Package authapi maintains the web based api for auth access.
+│       │   ├── checkapi -	Package checkapi maintains the web based api for system access.
+│       │   ├── homeapi -	Package homeapi maintains the web based api for home access.
+│       │   ├── productapi -	Package productapi maintains the web based api for product access.
+│       │   ├── tranapi -	Package tranapi maintains the web based api for tran access.
+│       │   ├── userapi -	Package userapi maintains the web based api for user access.
+│       │   └── vproductapi -	Package vproductapi maintains the web based api for product view access.
+│       └── tests -	
+│           ├── homeapi -	Package homeapi ...
+│           ├── productapi -	Package productapi ...
+│           ├── tranapi -	Package tranapi ...
+│           ├── userapi -	Package userapi ...
+│           └── vproductapi -	Package vproductapi ...
+├── app -	Package checkapp maintains the app layer api for the check domain.
+│   ├── api -	
+│   │   ├── auth -	Package auth provides authentication and authorization support.
+│   │   │   └── rego -	
+│   │   ├── authclient -	Package authclient provides support to access the auth service.
+│   │   ├── errs -	Package errs provides types and support related to web error functionality.
+│   │   ├── metrics -	Package metrics constructs the metrics the application will track.
+│   │   ├── mid -	Package mid provides app level middleware support.
+│   │   └── page -	Package page provides support for query paging.
+│   └── domain -	
+│       ├── checkapp -	Package checkapp maintains the app layer api for the check domain.
+│       ├── homeapp -	Package homeapp maintains the app layer api for the home domain.
+│       ├── productapp -	Package productapp maintains the app layer api for the product domain.
+│       ├── tranapp -	Package tranapp maintains the app layer api for the tran domain.
+│       ├── userapp -	Package userapp maintains the app layer api for the user domain.
+│       └── vproductapp -	Package vproductapp maintains the app layer api for the vproduct domain.
+├── business -	
+│   ├── api -	
+│   │   ├── dbtest -	Package dbtest contains supporting code for running tests that hit the DB.
+│   │   ├── delegate -	Package delegate provides the ability to make function calls between different domain packages when an import is not possible.
+│   │   ├── migrate -	Package migrate contains the database schema, migrations and seeding data.
+│   │   │   └── sql -	
+│   │   ├── order -	Package order provides support for describing the ordering of data.
+│   │   ├── sqldb -	Package sqldb provides support for access the database.
+│   │   │   └── dbarray -	Package dbarray provides support for database array types.
+│   │   ├── transaction -	Package transaction provides support for database transaction related functionality.
+│   │   └── unitest -	Package unitest provides support for excuting unit test logic.
+│   └── domain -	
+│       ├── homebus -	Package homebus provides business access to home domain.
+│       │   └── stores -	
+│       │       └── homedb -	Package homedb contains home related CRUD functionality.
+│       ├── productbus -	Package productbus provides business access to product domain.
+│       │   └── stores -	
+│       │       └── productdb -	Package productdb contains product related CRUD functionality.
+│       ├── userbus -	Package userbus provides business access to user domain.
+│       │   └── stores -	
+│       │       ├── usercache -	Package usercache contains user related CRUD functionality with caching.
+│       │       └── userdb -	Package userdb contains user related CRUD functionality.
+│       └── vproductbus -	Package vproductbus provides business access to view product domain.
+│           └── stores -	
+│               └── vproductdb -	Package vproductdb provides access to the product view.
+├── foundation -	
+│   ├── docker -	Package docker provides support for starting and stopping docker containers for running tests.
+│   ├── keystore -	Package keystore implements the auth.KeyLookup interface.
+│   ├── logger -	Package logger provides support for initializing the log system.
+│   ├── tracer -	Package tracer provides otel support.
+│   ├── validate -	Package validate contains the support for validating models.
+│   ├── web -	Package web contains a small web framework extension.
+│   └── worker -	Package worker manages a set of registered jobs that execute on demand.
+└── zarf -	
+    ├── docker -	
+    ├── k8s -	
+    │   ├── base -	
+    │   │   ├── auth -	
+    │   │   └── sales -	
+    │   └── dev -	
+    │       ├── auth -	
+    │       ├── database -	
+    │       ├── grafana -	
+    │       ├── loki -	
+    │       ├── prometheus -	
+    │       ├── promtail -	
+    │       ├── sales -	
+    │       └── tempo -	
+    └── keys -	Package keys stores development public/private key pairs used by the service.
